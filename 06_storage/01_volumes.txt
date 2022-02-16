@@ -1,0 +1,22 @@
+docker volume create mysql-vol-1
+docker volume create mysql-vol-2
+
+docker volume ls
+
+docker volume rm mysql-vol-2
+
+docker container run -dit --name mysql1 ---mount 'type=volume,source=mysql-vol-1,target=/mysql-data' ubuntu
+
+docker exec -it mysql1 bash
+df -h
+cd /mysql-data
+echo "`date` : Host name of the contain is `hostname`" >> sample.txt
+cat sample.txt
+
+docker container kill mysql1
+
+docker container run -dit --name mysql2 -v mysql-vol-1:/mysql-data' ubuntu
+docker exec -it mysql2 bash
+df -h
+cd /mysql-data
+cat sample.txt

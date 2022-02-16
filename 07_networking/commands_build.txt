@@ -1,0 +1,18 @@
+# ---------------------------------------------
+# Docker Network Demo - none, bridge and host
+# ---------------------------------------------
+docker container kill $(docker ps -q)
+docker container rm $(docker ps -qa)
+
+
+# none
+docker container run --name web1 -d --network none ubuntu_mynginx
+docker exec -it web1 bash
+
+# bridge
+docker container run --name web2 -d -p 8090:80 ubuntu_mynginx
+docker exec -it web2 bash
+
+# host
+docker container run --name web3 -d --network host ubuntu_mynginx
+docker exec -it web3 bash

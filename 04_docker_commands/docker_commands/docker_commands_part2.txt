@@ -1,0 +1,9 @@
+docker container run -dit --name u1 ubuntu
+docker container inspect [container name or id]
+docker container kill [container name or id]
+docker container logs [container name or id]
+
+
+docker container run --name web1 -d nginx
+docker container run --name web2 -d -p 9002:80 nginx
+docker container run -d --name web3 -d -p 9003:80 nginx

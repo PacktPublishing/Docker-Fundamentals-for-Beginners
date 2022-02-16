@@ -1,0 +1,15 @@
+docker version
+
+docker container ls
+
+docker container ls -a
+
+docker images
+
+docker container run ubuntu:18.04 hostname
+
+docker container run ubuntu hostname
+
+docker container run mysql
+
+docker container pull ubuntu:20.04

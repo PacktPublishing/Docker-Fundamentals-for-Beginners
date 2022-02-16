@@ -1,0 +1,25 @@
+# ---------------------------------------------
+# Building images
+# ---------------------------------------------
+docker image build -t ubuntu_mynginx:latest .
+
+docker images
+
+docker tag ubuntu_mynginx:latest ubuntu_mynginx:v1
+
+docker container run -d ubuntu_mynginx
+docker container run --name web1 -d ubuntu_mynginx
+docker container run --name web2 -d -p 8090:80 ubuntu_mynginx
+
+docker container run -d --name myweb91 -p 8091:80 ubuntu_mynginx:v1
+
+# ---------------------------------------------
+# Tag & Pushing >>>>>>>>>>>>>>>>
+# ---------------------------------------------
+docker tag ubuntu_mynginx:v1 codinggears360/ubuntu_mynginx:v1
+
+docker login
+codinggears360/3@tchY0utTh1nk1n8
+
+docker push codinggears360/ubuntu_mynginx:v1
+

@@ -1,0 +1,20 @@
+ # Install compose
+ sudo apt  install docker-compose
+
+ # up
+ docker-compose up -d
+
+ http://localhost:8000
+
+
+
+# MySQL
+mysql -u wpuser -h localhost wordpressdb -p
+
+show databases;
+use wordpressdb;
+select * from wp_users;
+
+
+# Scale
+docker-compose -f docker-compose-wp.yaml up -d --scale wordpress=5

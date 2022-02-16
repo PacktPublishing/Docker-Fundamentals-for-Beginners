@@ -1,0 +1,29 @@
+docker image build -t ubuntu_scripts:v1 .
+
+docker container run -dit --name myscripts1 ubuntu_scripts:v1
+
+docker container exec -it myscripts1 bash
+cd /tmp/scripts
+./magic.sh
+
+>>>>>> Rebuild the image with updated script....
+docker image build -t ubuntu_scripts:v2 .
+
+#1
+docker container run -dit -e MY_COUNTER=8 -e MY_MESSAGE="Welcome to CodingGears.io" --name myscripts2 ubuntu_scripts:v2
+docker container exec -it myscripts2 bash
+./magic.sh
+
+#2
+docker container run -dit -e MY_COUNTER=3 -e MY_MESSAGE="Welcome to Docker!" --name myscripts3 ubuntu_scripts:v2
+docker container exec -it myscripts3 bash
+./magic.sh
+
+#3
+export MY_MESSAGE="Docker is easy to learn!"
+docker container run -dit -e MY_COUNTER -e MY_MESSAGE --name myscripts4 ubuntu_scripts:v2
+docker container exec -it myscripts4 bash
+./magic.sh
+
+counter=${MY_COUNTER}
+message=${MY_MESSAGE}

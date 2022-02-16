@@ -1,0 +1,12 @@
+docker container run -dit --name my-ubuntu-1 --mount 'type=bind,source=/home/training,target=/host-home-data' ubuntu
+
+docker exec -it my-ubuntu-1 bash
+df -h
+cd /host-home-data
+ls -l
+
+docker container run -dit --name my-ubuntu-2 --volume /home/training:/host-home-data ubuntu
+docker exec -it my-ubuntu-2 bash
+df -h
+cd /host-home-data
+ls -l

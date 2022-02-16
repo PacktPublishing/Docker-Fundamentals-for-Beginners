@@ -1,0 +1,27 @@
+docker ps
+docker ps -a
+docker ps -q
+
+docker container run hello-world
+
+docker container run ubuntu
+
+docker container run alpine
+
+docker container run alpine echo "Hello Docker!"
+
+docker container run --name u1 ubuntu
+docker container run -i --name u2 ubuntu
+docker container run -it --name u3 ubuntu
+docker container run -dit --name u4 ubuntu
+docker exec -it [ID] bash
+docker exec -it u4 bash
+
+docker exec -it u4 hostname
+docker exec -it u4 df -h
+
+# Rnn & delete
+docker container run -it --name u50 ubuntu bash
+docker container run --rm -it --name u51 ubuntu bash
+docker container run --rm --name u52 ubuntu df -h
+

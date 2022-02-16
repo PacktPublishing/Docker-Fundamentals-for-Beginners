@@ -1,0 +1,7 @@
+ # Install compose
+ sudo apt  install docker-compose
+
+ # up
+ docker-compose up -d
+
+ http://localhost:8000

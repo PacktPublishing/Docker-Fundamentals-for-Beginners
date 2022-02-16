@@ -1,0 +1,17 @@
+docker container run -dit --name my-ubuntu-3 --mount 'type=tmpfs,target=/data-tmp' ubuntu
+
+docker exec -it my-ubuntu-3 bash
+df -h
+/data-tmp
+ls -l
+
+docker container run -dit --name my-ubuntu-4 --tmpfs /data-tmp ubuntu
+
+docker exec -it my-ubuntu-4 bash
+df -h
+/data-tmp
+ls -l
+
+# ERROR: This will create a volume and mount it
+docker container run -dit --name my-ubuntu-4 --volume /data-tmp ubuntu
+

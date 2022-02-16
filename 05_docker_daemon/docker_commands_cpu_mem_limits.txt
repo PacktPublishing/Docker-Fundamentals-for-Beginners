@@ -1,0 +1,8 @@
+docker container run -dit --name ubuntu_limits--cpus=".25" --memory=200m ubuntu
+
+NanoCpus
+Memory
+
+docker inspect [container id] | grep -i NanoCpus
+
+docker inspect [container id] | grep -i Memory

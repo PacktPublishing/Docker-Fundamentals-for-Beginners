@@ -1,0 +1,7 @@
+sudo systemctl enable docker
+
+sudo systemctl status docker
+
+sudo systemctl stop docker
+
+sudo systemctl stop docker.socket

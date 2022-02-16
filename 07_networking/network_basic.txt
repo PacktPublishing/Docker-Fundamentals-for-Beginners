@@ -1,0 +1,3 @@
+docker container run -dit --name web1 --network host nginx
+
+docker exec -it web1 bash

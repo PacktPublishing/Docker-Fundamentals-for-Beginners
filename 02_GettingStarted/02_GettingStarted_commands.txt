@@ -1,0 +1,21 @@
+docker version
+
+docker info
+
+docker ps
+
+docker ps -a
+
+ps -ef | grep dockerd
+
+docker container run ubuntu
+
+docker container run ubuntu echo "Hello World!"
+
+docker container run ubuntu hostname
+
+docker images
+
+docker container run ngnix
+
+docker exec -it [container id] bash
